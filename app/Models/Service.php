@@ -22,6 +22,7 @@ class Service extends Model
         'price',
         'description',
         'photo',
+        'icon',
         'duration_in_hour',
     ];
 
