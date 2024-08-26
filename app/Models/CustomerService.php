@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\CustomerServiceRole;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -29,6 +30,7 @@ class CustomerService extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'role' => CustomerServiceRole::class
     ];
 
     public function store(): HasOne

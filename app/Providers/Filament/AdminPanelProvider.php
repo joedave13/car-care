@@ -29,7 +29,10 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->colors([
                 'primary' => Color::Orange,
-                'gray' => Color::Gray
+                'gray' => Color::Gray,
+                'blue' => Color::Blue,
+                'lime' => Color::Lime,
+                'fuchsia' => Color::Fuchsia
             ])
             ->darkMode(true, isForced: true)
             ->profile(isSimple: false)
