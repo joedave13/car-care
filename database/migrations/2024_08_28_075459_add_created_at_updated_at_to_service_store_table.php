@@ -11,15 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::disableForeignKeyConstraints();
-
-        Schema::create('service_store', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('service_id')->constrained();
-            $table->foreignId('store_id')->constrained();
+        Schema::table('service_store', function (Blueprint $table) {
+            $table->timestamps();
         });
-
-        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -27,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('service_store');
+        Schema::table('service_store', function (Blueprint $table) {
+            $table->dropTimestamps();
+        });
     }
 };
